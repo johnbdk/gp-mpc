@@ -18,6 +18,7 @@
 
 # Matlab files
 *.DS_Store
+*.asv
 
 # Fortran module files
 *.mod
