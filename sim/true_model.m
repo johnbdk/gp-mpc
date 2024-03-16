@@ -1,4 +1,4 @@
-function [h, dh, h_expr, dh_expr] = true_model(x_eval, u_eval, noise)
+function [h, dh, h_expr, dh_expr] = true_model(omega, noise)
 %nominal_model - Nominal model evaluation and its gradient on
 % a deterministic/stochastic input omega. The nominal model is:
 %   f(x(k), u(k))
@@ -14,8 +14,8 @@ h_expr = f_expr + g_expr;
 
 dh_expr = jacobian(h_expr, [x, u]);
 
-x = x_eval;
-u = u_eval;
+x = omega(:, 1);
+u = omega(:, 2);
 
 % Evaluate nominal model
 h = double(vpa(subs(h_expr))) + noise;
