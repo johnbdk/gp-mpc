@@ -12,7 +12,7 @@ g_expr = sym(g_func);
 
 h_expr = f_expr + g_expr;
 
-dh_expr = jacobian(f_expr, [x, u]);
+dh_expr = jacobian(h_expr, [x, u]);
 
 x = x_eval;
 u = u_eval;
